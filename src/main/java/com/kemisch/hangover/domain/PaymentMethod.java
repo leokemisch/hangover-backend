@@ -1,5 +1,6 @@
 package com.kemisch.hangover.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,9 +25,12 @@ public class PaymentMethod implements Serializable {
     String name;
     String description;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "paymentMethod")
-    List<PaymentMethodInformation> paymentMethodInformationList;
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "payment_method")
+//    List<PaymentMethodInformation> paymentMethodInformationList;
+
+//    @JsonIgnore
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "payment_method")
+//    List<Expense> expenses;
 
     @NotNull
     @ManyToOne

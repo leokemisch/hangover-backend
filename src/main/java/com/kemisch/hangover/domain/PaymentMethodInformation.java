@@ -24,6 +24,7 @@ public class PaymentMethodInformation implements Serializable {
 
     @NotNull
     @ManyToOne
+    @JoinColumn(name = "payment_method")
     PaymentMethod paymentMethod;
 }
 
