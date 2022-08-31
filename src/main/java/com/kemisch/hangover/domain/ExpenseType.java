@@ -1,5 +1,6 @@
 package com.kemisch.hangover.domain;
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,6 +23,8 @@ public class ExpenseType implements Serializable {
     String name;
     String description;
 
+    @NotNull
     @ManyToOne
+    @JoinColumn(name = "user")
     User user;
 }

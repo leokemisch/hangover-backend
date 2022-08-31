@@ -12,7 +12,7 @@ import java.util.Date;
 @Getter
 @Setter
 @AllArgsConstructor
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 @Table(name = "transaction")
 public abstract class Transaction implements Serializable {
@@ -29,8 +29,10 @@ public abstract class Transaction implements Serializable {
     Double value;
     @NotNull
     Date transactionDate;
+
     @NotNull
     @ManyToOne
+    @JoinColumn(name = "user")
     User user;
 
     String description;

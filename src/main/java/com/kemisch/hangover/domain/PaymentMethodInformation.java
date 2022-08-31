@@ -19,7 +19,7 @@ public class PaymentMethodInformation implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String key;
+    String name;
     String value;
 
     @NotNull

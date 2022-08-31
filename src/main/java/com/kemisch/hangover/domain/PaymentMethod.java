@@ -30,6 +30,7 @@ public class PaymentMethod implements Serializable {
 
     @NotNull
     @ManyToOne
+    @JoinColumn(name = "user")
     User user;
 
 }
